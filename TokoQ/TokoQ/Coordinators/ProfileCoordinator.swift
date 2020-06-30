@@ -22,7 +22,13 @@ class ProfileCoordinator: DefaultCoordinator {
     
     func start() {
         viewController?.coordinator = self
-        viewController?.title = "Profile"
+        viewController?.title = "Purchased History"
         viewController?.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profile"))
+    }
+    
+    func showProductDetail(_ viewModel: ProductViewModel) {
+        let productDetailCoordinator = ProductDetailCoordinator(navigationController, productViewModel: viewModel)
+        productDetailCoordinator.start()
+        navigationController?.pushViewController(productDetailCoordinator.viewController ?? UIViewController(), animated: true)
     }
 }

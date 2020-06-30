@@ -51,7 +51,6 @@ class SearchViewController: UIViewController, Coordinated {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Search Products"
         view.addSubview(tableView)
         view.addSubview(infoLabel)
         setupNavBar()

@@ -23,6 +23,7 @@ class SearchCoordinator: DefaultCoordinator {
     
     func start() {
         viewController?.coordinator = self
+        viewController?.title = "Search Products"
     }
     
     func showProductDetail(_ viewModel: ProductViewModel) {

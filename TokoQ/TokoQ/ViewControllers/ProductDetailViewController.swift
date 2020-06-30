@@ -56,6 +56,13 @@ extension ProductDetailViewController: DetailViewProtocol {
     }
     
     func didTapBuyButton() {
-        print("## Buy Product")
+        if let productViewModel = coordinator?.productViewModel {
+            let newValue = PurchasedHistory.sharedPurchased.purchasedProducts.value + [productViewModel]
+            PurchasedHistory.sharedPurchased.purchasedProducts.accept(newValue)
+            
+            let alert = UIAlertController(title: "Purchased Product", message: "\(productViewModel.title) has been added to the shopping cart", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
