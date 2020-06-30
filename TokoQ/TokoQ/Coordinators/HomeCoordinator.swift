@@ -24,15 +24,10 @@ class HomeCoordinator: DefaultCoordinator {
         viewController?.coordinator = self
         viewController?.title = "Home"
         viewController?.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
-        /*
-        let defaults = UserDefaults.standard
-        let isIntro = defaults.bool(forKey: Constant.shared.isIntroKey)
-        if !isIntro {
-            DispatchQueue.main.async {
-                self.showIntro()
-                defaults.set(true, forKey: Constant.shared.isIntroKey)
-            }
-        }*/
+        
+        DispatchQueue.main.async {
+            self.showLogin()
+        }
     }
     
     func showProductDetail(_ viewModel: ProductViewModel) {
@@ -47,11 +42,10 @@ class HomeCoordinator: DefaultCoordinator {
         navigationController?.pushViewController(searchCoordinator.viewController ?? UIViewController(), animated: true)
     }
     
-    /*
-    func showIntro() {
+    func showLogin() {
         if let navigation = navigationController {
-            let coordinator = IntroCoordinator(navigationController: navigation, destinationNavigationController: nil)
+            let coordinator = SignInCoordinator(navigationController: navigation, destinationNavigationController: nil)
             coordinator.start()
         }
-    }*/
+    }
 }

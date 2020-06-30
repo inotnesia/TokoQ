@@ -21,7 +21,8 @@ class ProductCell: UICollectionViewCell {
     
     func configure(viewModel: ProductViewModel) {
         titleLabel.text = viewModel.title
-        loveView.image = viewModel.isLoved ? #imageLiteral(resourceName: "heartfull") : #imageLiteral(resourceName: "heartempty")
+        loveView.image = viewModel.isLoved ? #imageLiteral(resourceName: "heartfull").withRenderingMode(.alwaysTemplate) : #imageLiteral(resourceName: "heartempty").withRenderingMode(.alwaysTemplate)
+        loveView.tintColor = .tokoQPrimaryColor
         imageView.kf.setImage(with: viewModel.imageUrl)
         backgroundColor = .white
         layer.cornerRadius = 4

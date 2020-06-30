@@ -101,7 +101,8 @@ class HomeViewController: UIViewController, Coordinated {
     }
     
     @objc func searchTapped() {
-        coordinator?.showProductSearch(homeViewModel.viewModelForProducts())
+        //coordinator?.showProductSearch(homeViewModel.viewModelForProducts())
+        coordinator?.showLogin()
     }
 }
 

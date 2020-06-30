@@ -23,5 +23,6 @@ class ProductDetailCoordinator: DefaultCoordinator {
     
     func start() {
         viewController?.coordinator = self
+        viewController?.title = "Detail"
     }
 }

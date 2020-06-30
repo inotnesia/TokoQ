@@ -16,6 +16,7 @@
                 <outlet property="imageView" destination="2pL-22-iWT" id="FOz-Vh-GsA"/>
                 <outlet property="likeButton" destination="Abq-2U-T9O" id="V8A-sK-HYk"/>
                 <outlet property="priceLabel" destination="SzB-8c-hSh" id="zUz-61-fZ8"/>
+                <outlet property="shareButton" destination="5Pv-lp-OIk" id="9lG-EW-F17"/>
                 <outlet property="titleLabel" destination="9wb-QC-F6d" id="fpS-kl-efm"/>
             </connections>
         </placeholder>
@@ -106,7 +107,6 @@
                         <constraint firstAttribute="width" constant="24" id="UH7-KR-cac"/>
                         <constraint firstAttribute="height" constant="24" id="XaH-nD-MLy"/>
                     </constraints>
-                    <state key="normal" image="shareempty"/>
                     <state key="highlighted" image="sharefull"/>
                     <connections>
                         <action selector="didTapShareButton:" destination="-1" eventType="touchUpInside" id="lIf-Nt-4Vh"/>
@@ -137,7 +137,6 @@
         </view>
     </objects>
     <resources>
-        <image name="shareempty" width="30" height="30"/>
         <image name="sharefull" width="30" height="30"/>
     </resources>
 </document>

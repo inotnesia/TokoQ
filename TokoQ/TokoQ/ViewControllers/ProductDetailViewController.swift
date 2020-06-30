@@ -31,7 +31,6 @@ class ProductDetailViewController: UIViewController, Coordinated {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Detail"
         view.addSubview(detailView)
         setupView()
     }

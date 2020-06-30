@@ -20,6 +20,7 @@ class DetailView: UIView, NibLoadableView {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     weak var delegate: DetailViewProtocol?
     var imageUrl: URL?
@@ -42,7 +43,12 @@ class DetailView: UIView, NibLoadableView {
         
         likeButton.setImage(#imageLiteral(resourceName: "heartempty").withRenderingMode(.alwaysTemplate), for: .normal)
         likeButton.setImage(#imageLiteral(resourceName: "heartfull").withRenderingMode(.alwaysTemplate), for: .selected)
+        likeButton.tintColor = .tokoQPrimaryColor
         likeButton.isSelected = viewModel.isLoved
+        
+        shareButton.setImage(#imageLiteral(resourceName: "shareempty").withRenderingMode(.alwaysTemplate), for: .normal)
+        shareButton.setImage(#imageLiteral(resourceName: "sharefull").withRenderingMode(.alwaysTemplate), for: .highlighted)
+        shareButton.tintColor = .tokoQPrimaryColor
     }
     
     @IBAction func didTapShareButton(_ sender: Any) {
