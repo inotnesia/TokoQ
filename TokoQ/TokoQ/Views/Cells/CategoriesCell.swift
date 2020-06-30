@@ -21,7 +21,7 @@ class CategoriesCell: UICollectionViewCell {
         return collectionView
     }()
     
-    var categories = [Category]() {
+    var categories = [CategoryViewModel]() {
         didSet {
             collectionView.reloadData()
         }
@@ -53,9 +53,7 @@ extension CategoriesCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCell.self), for: indexPath) as? CategoryCell else { return UICollectionViewCell() }
-        let category = categories[indexPath.row]
-        let viewModel = CategoryViewModel(category: category)
-        cell.configure(viewModel: viewModel)
+        cell.configure(viewModel: categories[indexPath.row])
         return cell
     }
 }

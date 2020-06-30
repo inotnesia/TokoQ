@@ -64,8 +64,12 @@ class HomeViewModel {
         return productsViewModel
     }
     
-    func viewModelForCategories() -> [Category] {
-        return _categories.value
+    func viewModelForCategories() -> [CategoryViewModel] {
+        var categoriesViewModel: [CategoryViewModel] = []
+        for category in _categories.value {
+            categoriesViewModel.append(CategoryViewModel(category: category))
+        }
+        return categoriesViewModel
     }
     
     func fetchProducts() {
