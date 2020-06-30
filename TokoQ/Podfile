@@ -9,6 +9,10 @@ target 'TokoQ' do
   inhibit_all_warnings!
 
   # Pods for TokoQ
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'Kingfisher'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'FLEX', :configurations => ['Debug']
 
   target 'TokoQTests' do
