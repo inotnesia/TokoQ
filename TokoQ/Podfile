@@ -16,6 +16,7 @@ target 'TokoQ' do
   pod 'FBSDKLoginKit', '~> 5.0.2'
   pod 'FBSDKCoreKit', '~> 5.0.2'
   pod 'FBSDKShareKit', '~> 5.0.2'
+  pod 'GoogleSignIn', '~> 5.0.2'
   pod 'FLEX', :configurations => ['Debug']
 
   target 'TokoQTests' do

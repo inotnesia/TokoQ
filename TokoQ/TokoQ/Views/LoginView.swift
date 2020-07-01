@@ -9,9 +9,11 @@
 import UIKit
 import SnapKit
 import FBSDKLoginKit
+import GoogleSignIn
 
 protocol LoginViewProtocol: AnyObject {
     func didTapSignInButton(username: String, password: String)
+    func didTapGoogleSignOutButton()
 }
 
 class LoginView: UIView, NibLoadableView {
@@ -19,6 +21,28 @@ class LoginView: UIView, NibLoadableView {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rememberMeButton: UIButton!
+    
+    lazy var fbButton: FBLoginButton = {
+        return FBLoginButton()
+    }()
+    
+    lazy var googleSignInButton: GIDSignInButton = {
+        let signInButton = GIDSignInButton()
+        signInButton.style = GIDSignInButtonStyle.wide
+        return signInButton
+    }()
+    
+    lazy var googleSignOutButton: UIButton = {
+        let signOutButton = UIButton()
+        signOutButton.layer.cornerRadius = 3.0
+        signOutButton.setTitle("Sign Out From Google", for: .normal)
+        signOutButton.setTitleColor(.white, for: .normal)
+        signOutButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        signOutButton.backgroundColor = .googleRed
+        signOutButton.addTarget(self, action: #selector(googleSignOutButtonTapped(_:)), for: .touchUpInside)
+        signOutButton.isHidden = true
+        return signOutButton
+    }()
     
     weak var delegate: LoginViewProtocol?
     
@@ -42,13 +66,14 @@ class LoginView: UIView, NibLoadableView {
         clipsToBounds = true
         
         setupFBButton()
+        setupGoogleSignOutButton()
+        setupGoogleSignInButton()
     }
     
     func setupFBButton() {
-        let loginButton = FBLoginButton()
-        addSubview(loginButton)
+        addSubview(fbButton)
         
-        loginButton.snp.makeConstraints { (make) in
+        fbButton.snp.makeConstraints { (make) in
             make.top.equalTo(rememberMeButton.snp.bottom).offset(32)
             make.centerX.equalTo(self)
             make.height.equalTo(30)
@@ -60,6 +85,29 @@ class LoginView: UIView, NibLoadableView {
         }
     }
     
+    func setupGoogleSignOutButton() {
+        addSubview(googleSignOutButton)
+        
+        googleSignOutButton.snp.makeConstraints { (make) in
+            make.top.equalTo(rememberMeButton.snp.bottom).offset(78)
+            make.centerX.equalTo(self)
+            make.height.equalTo(28)
+            make.width.equalTo(183)
+        }
+        setNeedsUpdateConstraints()
+    }
+    
+    func setupGoogleSignInButton() {
+        addSubview(googleSignInButton)
+        
+        googleSignInButton.snp.makeConstraints { (make) in
+            make.top.equalTo(rememberMeButton.snp.bottom).offset(78)
+            make.centerX.equalTo(self)
+            make.height.equalTo(30)
+        }
+        setNeedsUpdateConstraints()
+    }
+    
     @IBAction func didTapSignInButton(_ sender: Any) {
         usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -68,5 +116,21 @@ class LoginView: UIView, NibLoadableView {
     
     @IBAction func didTapRememberMeButton(_ sender: Any) {
         rememberMeButton.isSelected = !rememberMeButton.isSelected
+    }
+    
+    @objc func googleSignOutButtonTapped(_ sender: UIButton) {
+        delegate?.didTapGoogleSignOutButton()
+    }
+    
+    func updateGoogleButton() {
+        if let user = GIDSignIn.sharedInstance()?.currentUser, let username = user.profile.givenName {
+            usernameTextField.text = username
+            googleSignInButton.isHidden = true
+            googleSignOutButton.isHidden = false
+        } else {
+            usernameTextField.text = ""
+            googleSignInButton.isHidden = false
+            googleSignOutButton.isHidden = true
+        }
     }
 }

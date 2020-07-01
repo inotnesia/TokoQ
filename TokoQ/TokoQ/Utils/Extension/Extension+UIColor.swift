@@ -11,6 +11,7 @@ extension UIColor {
     
     static let tokoQPrimaryColor = UIColor.init(hexString: "#1E5CB3")
     static let tokoQBgColor = UIColor.init(hexString: "#EBEBE3")
+    static let googleRed = UIColor.init(hexString: "#DB4437")
     
     public convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

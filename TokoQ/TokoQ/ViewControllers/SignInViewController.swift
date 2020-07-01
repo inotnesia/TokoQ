@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class SignInViewController: UIViewController, Coordinated {
     
@@ -33,6 +34,10 @@ class SignInViewController: UIViewController, Coordinated {
         super.viewDidLoad()
         view.addSubview(loginView)
         setupView()
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        NotificationCenter.default.addObserver(self, selector: #selector(userDidSignInGoogle(_:)), name: .signInGoogleCompleted, object: nil)
+        loginView.updateGoogleButton()
     }
     
     func setupView() {
@@ -47,6 +52,15 @@ class SignInViewController: UIViewController, Coordinated {
         }
         view.setNeedsUpdateConstraints()
     }
+    
+    // MARK:- Notification
+    @objc private func userDidSignInGoogle(_ notification: Notification) {
+        loginView.updateGoogleButton()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .signInGoogleCompleted, object: nil)
+    }
 }
 
 extension SignInViewController: LoginViewProtocol {
@@ -58,5 +72,10 @@ extension SignInViewController: LoginViewProtocol {
         } else {
             coordinator?.stop()
         }
+    }
+    
+    func didTapGoogleSignOutButton() {
+        GIDSignIn.sharedInstance()?.signOut()
+        loginView.updateGoogleButton()
     }
 }
