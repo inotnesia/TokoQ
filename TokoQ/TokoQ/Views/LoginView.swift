@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import FBSDKLoginKit
 
 protocol LoginViewProtocol: AnyObject {
     func didTapSignInButton(username: String, password: String)
@@ -38,6 +40,24 @@ class LoginView: UIView, NibLoadableView {
         layer.borderWidth = 1
         layer.borderColor = UIColor.tokoQPrimaryColor.cgColor
         clipsToBounds = true
+        
+        setupFBButton()
+    }
+    
+    func setupFBButton() {
+        let loginButton = FBLoginButton()
+        addSubview(loginButton)
+        
+        loginButton.snp.makeConstraints { (make) in
+            make.top.equalTo(rememberMeButton.snp.bottom).offset(32)
+            make.centerX.equalTo(self)
+            make.height.equalTo(30)
+        }
+        setNeedsUpdateConstraints()
+        
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange, object: nil, queue: OperationQueue.main) { (notification) in
+            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+        }
     }
     
     @IBAction func didTapSignInButton(_ sender: Any) {

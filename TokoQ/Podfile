@@ -13,6 +13,9 @@ target 'TokoQ' do
   pod 'Kingfisher'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'FBSDKLoginKit', '~> 5.0.2'
+  pod 'FBSDKCoreKit', '~> 5.0.2'
+  pod 'FBSDKShareKit', '~> 5.0.2'
   pod 'FLEX', :configurations => ['Debug']
 
   target 'TokoQTests' do

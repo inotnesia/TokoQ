@@ -79,44 +79,23 @@
                         <action selector="didTapSignInButton:" destination="-1" eventType="touchUpInside" id="6iM-KL-IBu"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iM-zh-Crt">
-                    <rect key="frame" x="16" y="250" width="288" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Fsp-CN-j3f"/>
-                    </constraints>
-                    <state key="normal" title="Facebook"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc5-e4-2wO">
-                    <rect key="frame" x="16" y="296" width="288" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="AHw-bD-VBY"/>
-                    </constraints>
-                    <state key="normal" title="Google"/>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q6Q-KM-J7e" firstAttribute="leading" secondItem="Bvv-6t-22Q" secondAttribute="trailing" constant="8" id="BPP-WE-3m4"/>
-                <constraint firstItem="4iM-zh-Crt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Bah-Yq-vKq"/>
                 <constraint firstItem="Nrc-Fn-3Cl" firstAttribute="top" secondItem="sgk-qE-SlB" secondAttribute="bottom" constant="16" id="Biy-Xi-wCM"/>
                 <constraint firstItem="Bvv-6t-22Q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FIi-OO-0Tv"/>
                 <constraint firstItem="sgk-qE-SlB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IGK-06-drd"/>
                 <constraint firstItem="Nrc-Fn-3Cl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="JNq-I1-ngh"/>
-                <constraint firstAttribute="trailing" secondItem="nc5-e4-2wO" secondAttribute="trailing" constant="16" id="N3F-2r-fDy"/>
                 <constraint firstItem="5Md-i1-RlR" firstAttribute="top" secondItem="Nrc-Fn-3Cl" secondAttribute="bottom" constant="16" id="RqP-by-blR"/>
-                <constraint firstItem="nc5-e4-2wO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Shv-EW-zbZ"/>
-                <constraint firstAttribute="bottom" secondItem="nc5-e4-2wO" secondAttribute="bottom" constant="44" id="X0h-2Q-YTQ"/>
                 <constraint firstAttribute="trailing" secondItem="NRP-wh-nfM" secondAttribute="trailing" constant="16" id="YnU-j1-afc"/>
                 <constraint firstAttribute="trailing" secondItem="5Md-i1-RlR" secondAttribute="trailing" constant="16" id="awy-gG-kvW"/>
                 <constraint firstItem="NRP-wh-nfM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="hPn-ZY-zjl"/>
                 <constraint firstItem="NRP-wh-nfM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="iiz-F8-UlN"/>
-                <constraint firstItem="nc5-e4-2wO" firstAttribute="top" secondItem="4iM-zh-Crt" secondAttribute="bottom" constant="16" id="kHw-MC-nPm"/>
                 <constraint firstItem="Q6Q-KM-J7e" firstAttribute="top" secondItem="Nrc-Fn-3Cl" secondAttribute="bottom" constant="16" id="kKF-tU-H1f"/>
                 <constraint firstAttribute="trailing" secondItem="sgk-qE-SlB" secondAttribute="trailing" constant="16" id="l1c-bg-UDI"/>
-                <constraint firstAttribute="trailing" secondItem="4iM-zh-Crt" secondAttribute="trailing" constant="16" id="qOU-5a-FVm"/>
                 <constraint firstAttribute="trailing" secondItem="Nrc-Fn-3Cl" secondAttribute="trailing" constant="16" id="sNn-o9-JhG"/>
                 <constraint firstItem="Bvv-6t-22Q" firstAttribute="top" secondItem="Nrc-Fn-3Cl" secondAttribute="bottom" constant="16" id="saJ-hE-BY1"/>
-                <constraint firstItem="4iM-zh-Crt" firstAttribute="top" secondItem="Q6Q-KM-J7e" secondAttribute="bottom" constant="32" id="wcS-ES-aEo"/>
                 <constraint firstItem="sgk-qE-SlB" firstAttribute="top" secondItem="NRP-wh-nfM" secondAttribute="bottom" constant="22" id="yL0-rA-zS1"/>
                 <constraint firstItem="5Md-i1-RlR" firstAttribute="leading" secondItem="Q6Q-KM-J7e" secondAttribute="trailing" constant="8" id="yrs-5Y-EEf"/>
             </constraints>

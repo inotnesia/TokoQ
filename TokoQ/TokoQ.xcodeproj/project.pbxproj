@@ -376,6 +376,7 @@
 				1860232624A4A0DD00F6E2F4 /* Sources */,
 				1860232724A4A0DD00F6E2F4 /* Frameworks */,
 				1860232824A4A0DD00F6E2F4 /* Resources */,
+				85E75C14C91D28006969E19C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -541,6 +542,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85E75C14C91D28006969E19C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokoQ/Pods-TokoQ-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokoQ/Pods-TokoQ-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TokoQ/Pods-TokoQ-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3DA25E4304DA05F960FBC58 /* [CP] Check Pods Manifest.lock */ = {
@@ -784,7 +802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = inotnesia.TokoQ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inotnesia.TokoQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -803,7 +821,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = inotnesia.TokoQ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inotnesia.TokoQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
