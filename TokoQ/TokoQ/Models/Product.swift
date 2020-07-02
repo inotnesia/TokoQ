@@ -19,13 +19,13 @@ public struct Data: Codable {
 
 public struct Category: Codable {
     public let id: Int
-    public var imageUrl: String?
+    public let imageUrl: String?
     public let name: String?
 }
 
 public struct Product: Codable {
     public let id: String?
-    public var imageUrl: String?
+    public let imageUrl: String?
     public let title: String?
     public let description: String?
     public let price: String?
