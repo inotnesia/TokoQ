@@ -9,7 +9,7 @@
 import XCTest
 @testable import TokoQ
 
-class ProductViewModelTest: XCTestCase {
+class ProductViewModelTests: XCTestCase {
     
     var sut: ProductViewModel?
     let fakeProduct = Product(id: "1", imageUrl: "https://via.placeholder.com/50", title: "Placeholder", description: "Lorem ipsum dolor sit amet", price: "$ 10", loved: 1)

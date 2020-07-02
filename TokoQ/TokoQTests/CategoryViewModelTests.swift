@@ -9,7 +9,7 @@
 import XCTest
 @testable import TokoQ
 
-class CategoryViewModelTest: XCTestCase {
+class CategoryViewModelTests: XCTestCase {
     
     var sut: CategoryViewModel?
     let fakeCategory = Category(id: 1, imageUrl: "https://via.placeholder.com/50", name: "Placeholder")
