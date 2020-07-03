@@ -9,26 +9,43 @@
 import XCTest
 
 class TokoQUITests: XCTestCase {
+    var app: XCUIApplication!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testSignInAlert() {
+        let signInButton = app.buttons["Sign in"]
+        let alert = app.alerts["Sign In Failed"].buttons["OK"]
+        let usernameTextField = app.textFields["Username"]
+        let passwordTextField = app.secureTextFields["Password"]
+        
+        signInButton.tap()
+        
+        if let usernameText = usernameTextField.value as? String, usernameText.isEmpty == false, usernameText != usernameTextField.placeholderValue {
+            if let passwordText = passwordTextField.value as? String, passwordText.isEmpty == false, passwordText != passwordTextField.placeholderValue {
+                XCTAssertFalse(alert.exists)
+            }
+        } else {
+            XCTAssertTrue(alert.exists)
+        }
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGoogleSignOutButton() {
+        let usernameTextField = app.textFields["Username"]
+        let googleSignOutButton = app.buttons["Sign Out From Google"]
+        
+        if googleSignOutButton.exists {
+            if let usernameText = usernameTextField.value as? String, usernameText.isEmpty == false, usernameText != usernameTextField.placeholderValue {
+                XCTAssertTrue(googleSignOutButton.exists)
+            } else {
+                XCTAssertFalse(googleSignOutButton.exists)
+            }
+        } else {
+            XCTAssertFalse(googleSignOutButton.exists)
+        }
     }
-
 }
