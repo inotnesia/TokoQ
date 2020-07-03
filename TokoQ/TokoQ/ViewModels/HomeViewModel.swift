@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class HomeViewModel {
-    private let productService: ProductService
+    private let productService: ProductServiceProtocol
     private let disposeBag = DisposeBag()
     private let _products = BehaviorRelay<[Product]>(value: [])
     private let _categories = BehaviorRelay<[Category]>(value: [])
@@ -46,7 +46,7 @@ class HomeViewModel {
         return _categories.value.count
     }
     
-    init(productService: ProductService) {
+    init(productService: ProductServiceProtocol) {
         self.productService = productService
         self.fetchProducts()
     }

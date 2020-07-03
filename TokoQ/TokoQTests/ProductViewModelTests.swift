@@ -12,7 +12,7 @@ import XCTest
 class ProductViewModelTests: XCTestCase {
     
     var sut: ProductViewModel?
-    let fakeProduct = Product(id: "1", imageUrl: "https://via.placeholder.com/50", title: "Placeholder", description: "Lorem ipsum dolor sit amet", price: "$ 10", loved: 1)
+    let fakeProduct = Product(id: "1", imageUrl: "https://via.placeholder.com/50", title: "Placeholder", description: "Lorem ipsum dolor sit amet", price: "$10", loved: 1)
     
     override func setUp() {
         super.setUp()
@@ -46,7 +46,7 @@ class ProductViewModelTests: XCTestCase {
     }
     
     func testPrice() {
-        let price = "$ 10"
+        let price = "$10"
         XCTAssertEqual(sut?.price, price)
     }
 }

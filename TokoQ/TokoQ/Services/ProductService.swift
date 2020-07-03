@@ -16,7 +16,7 @@ public enum ProductError: Error {
     case serializationError
 }
 
-public class ProductService {
+public class ProductService: ProductServiceProtocol {
     public static let shared = ProductService()
     private init() {}
     private let baseAPI = "https://private-4639ce-ecommerce56.apiary-mock.com/home"

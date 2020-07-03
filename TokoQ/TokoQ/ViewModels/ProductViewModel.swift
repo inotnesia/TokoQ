@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct ProductViewModel {
+struct ProductViewModel: Equatable {
+    static func == (lhs: ProductViewModel, rhs: ProductViewModel) -> Bool {
+        return lhs.title == rhs.title && lhs.imageUrl == rhs.imageUrl && lhs.isLoved == rhs.isLoved && lhs.description == rhs.description && lhs.price == rhs.price
+    }
+    
     private var product: Product
     
     init(product: Product) {
