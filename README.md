@@ -15,7 +15,7 @@ Basic e-commerce iOS App
 
 * Data Binding
 * Reactive Programming
-* Dependencies management
+* Dependencies Management
 
 ## Built With
 
