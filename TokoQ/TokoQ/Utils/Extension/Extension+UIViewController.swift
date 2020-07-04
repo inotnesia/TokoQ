@@ -9,17 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    
-//    func setupLogoView() {
-//        guard let navController = navigationController else { return }
-//        let logoX = (navController.navigationBar.frame.size.width - Constant.shared.logoWidth) / 2
-//        let logoY = (navController.navigationBar.frame.size.height - Constant.shared.logoHeight) / 2
-//        let logo = LogoView(frame: CGRect(x: logoX, y: logoY, width: Constant.shared.logoWidth, height: Constant.shared.logoHeight))
-//        let leftItem = UIBarButtonItem(customView: logo)
-//        leftItem.isEnabled = false
-//        navigationItem.leftBarButtonItem = leftItem
-//    }
-    
+        
     func setupNavBar() {
         navigationController?.navigationBar.barTintColor = UIColor.tokoQPrimaryColor
         navigationController?.navigationBar.isTranslucent = false
